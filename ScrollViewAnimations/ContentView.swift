@@ -18,9 +18,9 @@ struct ContentView: View {
             LazyHStack {
                 ForEach(cards) { card in
                     RoundedRectangle(cornerRadius: 20)
-                         .fill(.ultraThickMaterial)
-                         .stroke(.white)
-                         .frame(width: 350, height: 500)
+                        .fill(.ultraThinMaterial)
+                        .stroke(.white)
+                        .frame(width: 350, height: 500)
                         .containerRelativeFrame(.horizontal)
                         .scrollTransition(axis: .horizontal) { content, phase in
                             content
@@ -33,7 +33,7 @@ struct ContentView: View {
         .preferredColorScheme(.dark)
         .scrollIndicators(.hidden)
         .contentMargins(20)
-        .background(LinearGradient(colors: [.white, .black.opacity(0.4)], startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(colors: [.white.opacity(0.7), .black.opacity(0.6)], startPoint: .top, endPoint: .bottom))
     }
 }
 
