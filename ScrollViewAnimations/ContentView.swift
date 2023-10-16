@@ -10,10 +10,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    let cards = [CardItem(id: 0), CardItem(id: 1), CardItem(id: 2)]
+    
     var body: some View {
         
-        VStack {
+        ScrollView {
          
+            LazyHStack {
+                ForEach(cards) { card in
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(.ultraThickMaterial)
+                }
+            }
         }
         .preferredColorScheme(.dark)
     }
@@ -21,4 +29,9 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+
+struct CardItem: Identifiable {
+    var id: Int
 }
